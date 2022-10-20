@@ -12,10 +12,17 @@ public class CalculatorSteps extends PageSteps {
     public void plus() {
     	CalculatorService.plus();
     }
+
+    @When("(.*) Minus (.*)")
+    public void minus(String minuend,String subtrahend)
+    {
+        CalculatorService.minus(minuend,subtrahend);
+    }
+
     
-    @Then("Result is Fifteen")
-    public void result() {
-    	CalculatorService.result();
+    @Then("Result for (.*) minus (.*) is (.*)")
+    public void result(String min, String sub, String res) {
+    	CalculatorService.result(min,sub);
     }
 
 }
