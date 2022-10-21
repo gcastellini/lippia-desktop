@@ -17,6 +17,8 @@ public class CalculatorConstants {
     public static final String MUL = "XPATH://*[@AutomationId='multiplyButton']";
     public static final String DIV = "XPATH://*[@AutomationId='divideButton']";
     public static final String PLUS = "XPATH://*[@AutomationId='plusButton']";
+
+    public static final String NEGATE = "XPATH://*[@AutomationId='negateButton']";
     public static final String EQUAL = "XPATH://*[@AutomationId='equalButton']";
     
     //DISPLAY

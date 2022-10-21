@@ -11,7 +11,8 @@ Feature: As a potential client i need to open a calculator and do math operation
     Then Result  is <result>
     Examples:
       | minuend | subtrahend | result |
-      | 10      | 2          | 8      |
+      | 6       | -4         | 10     |
+      | -10     | 2          | -12    |
 
   @Smoke @Multiplied
   Scenario Outline: Multiplication operation
@@ -19,8 +20,8 @@ Feature: As a potential client i need to open a calculator and do math operation
     Then Result  is <result>
     Examples:
       | factor1 | factor2 | result |
-      | 10      | 2       | 20     |
-      | 189     | 33      | 6237   |
+      | 10      | -2      | -20    |
+      | -189    | 33      | -6237  |
 
 
   @Smoke @Division
@@ -29,6 +30,6 @@ Feature: As a potential client i need to open a calculator and do math operation
     Then Result  is <result>
     Examples:
       | dividend | divisor | result |
-      | 10       | 2       | 5      |
-      | 144      | 12      | 12     |
+      | -10      | 2       | -5    |
+      | 144      | -12     | -12    |
 
