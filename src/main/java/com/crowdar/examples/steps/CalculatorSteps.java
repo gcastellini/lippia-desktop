@@ -29,20 +29,10 @@ public class CalculatorSteps extends PageSteps {
         CalculatorService.div(dividend,divisor);
     }
     
-    @Then("Result for substraction  is (.*)")
-    public void resultMin( String res) {
-    	CalculatorService.minusResult(res);
+    @Then("Result  is (.*)")
+    public void result( String res) {
+    	CalculatorService.Result(res);
     }
 
-
-    @Then("Result for multiplication is (.*)")
-    public void resultMult( String res){
-        CalculatorService.multResult(res);
-    }
-
-    @Then("Result for division is (.*)")
-    public void resultDiv(String res) {
-        CalculatorService.divResult(res);
-    }
 
 }
