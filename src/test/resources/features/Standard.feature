@@ -1,11 +1,12 @@
+@Smoke
 Feature: As a potential client i need to open a calculator and do math operations
 
-  @Smoke @Plus
+  #@Smoke @Plus
   ##Scenario: Plus operation
     ##When Seven Plus Eight
     ##Then Result is Fifteen
 
-    @Smoke @Minus
+    @Minus
   Scenario Outline: Minus operation
     When <minuend> Minus <subtrahend>
     Then Result  is <result>
@@ -14,7 +15,7 @@ Feature: As a potential client i need to open a calculator and do math operation
       | 6       | -4         | 10     |
       | -10     | 2          | -12    |
 
-  @Smoke @Multiplied
+  @Multiplied
   Scenario Outline: Multiplication operation
     When <factor1> multiplied <factor2>
     Then Result  is <result>
@@ -24,7 +25,7 @@ Feature: As a potential client i need to open a calculator and do math operation
       | -189    | 33      | -6237  |
 
 
-  @Smoke @Division
+@Division
   Scenario Outline: Division operation
     When <dividend> divided <divisor>
     Then Result  is <result>
