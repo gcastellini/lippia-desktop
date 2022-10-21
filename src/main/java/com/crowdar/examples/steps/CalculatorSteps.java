@@ -20,19 +20,29 @@ public class CalculatorSteps extends PageSteps {
         CalculatorService.minus(minuend,subtrahend);
     }
 
+    @When("(.*) multiplied (.*)")
+    public void mult(String factor1,String factor2){
+        CalculatorService.mult(factor1,factor2);
+    }
     @When("(.*) divided (.*)")
-    public void div(String dvn,String div){
-        CalculatorService.div(dvn,div);
+    public void div(String dividend,String divisor){
+        CalculatorService.div(dividend,divisor);
     }
     
-    @Then("Result for (.*) minus (.*) is (.*)")
-    public void resultMin(String min, String sub, String res) {
-    	CalculatorService.minusResult(min,sub);
+    @Then("Result for substraction  is (.*)")
+    public void resultMin( String res) {
+    	CalculatorService.minusResult(res);
     }
 
-    @Then("Result for (.*) divided (.*) is (.*)")
-    public void resultDiv(String dvn, String div, String res) {
-        CalculatorService.divResult(dvn,div);
+
+    @Then("Result for multiplication is (.*)")
+    public void resultMult( String res){
+        CalculatorService.multResult(res);
+    }
+
+    @Then("Result for division is (.*)")
+    public void resultDiv(String res) {
+        CalculatorService.divResult(res);
     }
 
 }

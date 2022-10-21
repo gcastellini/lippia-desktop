@@ -5,22 +5,37 @@ import org.testng.Assert;
 
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.examples.constants.CalculatorConstants;
-import org.testng.asserts.Assertion;
 
 public class CalculatorService {
 
-	private CalculatorService() {}
+	private CalculatorService() {
+
+    }
 
 
     public static void minus(String minuend,String subtrahend){
        char[] ch=minuend.toCharArray();
-       for (int i =0; i<ch.length;i++){
-           MobileActionManager.click(CalculatorConstants.NUM,String.valueOf(ch[i]));
-       }
+        for (char c : ch) {
+            MobileActionManager.click(CalculatorConstants.NUM, String.valueOf(c));
+        }
        MobileActionManager.click(CalculatorConstants.MINUS);
        char[] ch2=subtrahend.toCharArray();
-        for (int i =0; i<ch2.length;i++){
-            MobileActionManager.click(CalculatorConstants.NUM,String.valueOf(ch2[i]));
+        for (char c : ch2) {
+            MobileActionManager.click(CalculatorConstants.NUM, String.valueOf(c));
+        }
+        MobileActionManager.click(CalculatorConstants.EQUAL);
+
+    }
+
+    public static void mult(String factor1,String factor2){
+        char[] ch=factor1.toCharArray();
+        for (char c : ch) {
+            MobileActionManager.click(CalculatorConstants.NUM, String.valueOf(c));
+        }
+        MobileActionManager.click(CalculatorConstants.MUL);
+        char[] ch2=factor2.toCharArray();
+        for (char c : ch2) {
+            MobileActionManager.click(CalculatorConstants.NUM, String.valueOf(c));
         }
         MobileActionManager.click(CalculatorConstants.EQUAL);
 
@@ -28,9 +43,10 @@ public class CalculatorService {
     }
 
     public static void div(String dvn,String dvd){
+
         char[] ch=dvn.toCharArray();
-        for (int i =0; i<ch.length;i++){
-            MobileActionManager.click(CalculatorConstants.NUM,String.valueOf(ch[i]));
+        for (char c : ch) {
+            MobileActionManager.click(CalculatorConstants.NUM, String.valueOf(c));
         }
         MobileActionManager.click(CalculatorConstants.DIV);
         if (Integer.parseInt(dvd) == 0){
@@ -38,11 +54,13 @@ public class CalculatorService {
         }
         else {
             char[] ch2 = dvd.toCharArray();
-            for (int i = 0; i < ch2.length; i++) {
-                MobileActionManager.click(CalculatorConstants.NUM, String.valueOf(ch2[i]));
+            for (char c : ch2) {
+                MobileActionManager.click(CalculatorConstants.NUM, String.valueOf(c));
             }
             MobileActionManager.click(CalculatorConstants.EQUAL);
+
         }
+
 
     }
 	public static void plus() {
@@ -52,14 +70,16 @@ public class CalculatorService {
         ActionManager.click(CalculatorConstants.EQUAL);
     }
 
-    public static void minusResult(String min,String sub) {
-        Integer res = Integer.parseInt(min) - Integer.parseInt(sub);
-        Assert.assertEquals(getResult(), String.valueOf(res));
+    public static void minusResult(String res) {
+        Assert.assertEquals(getResult(), res);
     }
 
-    public static void divResult(String dvn,String div)
-    {Integer res = Integer.parseInt(dvn) - Integer.parseInt(div);
-    	Assert.assertEquals(getResult(),String.valueOf(res));
+    public static void multResult(String res) {
+        Assert.assertEquals(getResult(), res);
+    }
+
+    public static void divResult(String res) {
+    	Assert.assertEquals(getResult(),res);
     }
     
     public static String getResult() {
